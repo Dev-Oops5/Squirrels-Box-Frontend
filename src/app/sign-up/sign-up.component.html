@@ -1,3 +1,4 @@
+
 <mat-toolbar style="background: #FF8A00; ">
   <span class="mat-h1" style="color:#fff; margin: 0 auto;">User Registration</span>
 </mat-toolbar>
@@ -8,31 +9,31 @@
       <form [formGroup]="form1" (ngSubmit)="submit()">
         <p>
           <mat-form-field>
-            <input type="text" matInput placeholder="Username" formControlName="username">
+            <input id="username" type="text" matInput placeholder="Username" >
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field>
-            <input type="email" matInput placeholder="Email" formControlName="email">
+            <input id="email" type="email" matInput placeholder="Email" >
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field>
-            <input type="date" matInput placeholder="Birthday" formControlName="birthdayDate">
+            <input type="date" matInput placeholder="Birthday (Optional)" id="birthdayDate">
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field>
-            <input type="password" matInput placeholder="Password" formControlName="password">
+            <input type="password" matInput placeholder="Password" id="password">
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field>
-            <input type="password" matInput placeholder="Confirm Password" formControlName="password">
+            <input type="password" matInput placeholder="Confirm Password" id="password">
           </mat-form-field>
         </p>
 
@@ -47,7 +48,6 @@
         <div class="button">
           <button type="submit" mat-raised-button>Sign Up</button>
         </div>
-
 
       </form>
     </mat-card-content>
