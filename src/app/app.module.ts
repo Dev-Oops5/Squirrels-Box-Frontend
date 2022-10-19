@@ -6,8 +6,12 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from './Materials/material.module';
 import { SignUpComponent } from './sign-up/sign-up.component'
+
+import { MatCardModule } from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { SignUpComponent } from './sign-up/sign-up.component'
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
