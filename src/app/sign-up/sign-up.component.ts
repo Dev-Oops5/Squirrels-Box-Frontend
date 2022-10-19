@@ -20,14 +20,14 @@ export class SignUpComponent implements OnInit{
 
   }
 
-  form: FormGroup = new FormGroup({
+  form1: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
   });
 
   /* TODO: CREAR CARPETA DE SERVICIOS PARA EL REGISTRO */
   submit() {
-    if (this.form.valid) {
+    if (this.form1.valid) {
       //this.submitEM1.emit(this.form.value);
       this.router.navigate(['/SignIn'])
     }

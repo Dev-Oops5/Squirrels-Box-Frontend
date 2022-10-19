@@ -5,7 +5,7 @@
 <div class="container">
   <mat-card>
     <mat-card-content>
-      <form [formGroup]="form" (ngSubmit)="submit()">
+      <form [formGroup]="form1" (ngSubmit)="submit()">
         <p>
           <mat-form-field>
             <input type="text" matInput placeholder="Username" formControlName="username">
@@ -44,8 +44,8 @@
         <label for="cbox1"> Accept <a href="#">terms and condition</a> <br></label>
 
 
-        <div class="button" (click)="submit()">
-          <button mat-raised-button>Sign Up</button>
+        <div class="button">
+          <button type="submit" mat-raised-button>Sign Up</button>
         </div>
 
 
