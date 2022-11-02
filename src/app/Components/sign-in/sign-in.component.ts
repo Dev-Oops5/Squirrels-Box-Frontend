@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/Services/user.service';
 
 
 @Component({
@@ -13,18 +15,20 @@ export class SignInComponent{
   @Input() error!: string|null;
   @Output() submitEM = new EventEmitter();
 
-  
+  constructor(public router:Router, private userService: UserService){
+
+  }
+
 
   form: FormGroup = new FormGroup({
-    username: new FormControl(''),
+    email: new FormControl(''),
     password: new FormControl(''),
   });
 
-  /* TODO: CREAR CARPETA DE SERVICIOS PARA INICIAR SESIÓN */
+
   submit() {
     if (this.form.valid) {
-      //this.submitEM.emit(this.form.value);
-
+      this.userService.login(this.form.value.email, this.form.value.password);
 
     }
   }

@@ -9,31 +9,31 @@
       <form [formGroup]="form1" (ngSubmit)="submit()">
         <p>
           <mat-form-field>
-            <input id="username" type="text" matInput placeholder="Username" >
+            <input id="username" type="text" matInput placeholder="username" formControlName="username">
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field>
-            <input id="email" type="email" matInput placeholder="Email" >
+            <input id="email" type="email" matInput placeholder="email" formControlName="email">
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field>
-            <input type="date" matInput placeholder="Birthday (Optional)" id="birthdayDate">
+            <input type="date" matInput placeholder="Birthday (Optional)" id="birthdaydate" formControlName="birthday">
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field>
-            <input type="password" matInput placeholder="Password" id="password">
+            <input type="password" matInput placeholder="Password" id="password" formControlName="password">
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field>
-            <input type="password" matInput placeholder="Confirm Password" id="password">
+            <input type="password" matInput placeholder="Confirm Password" id="password" formControlName="password2">
           </mat-form-field>
         </p>
 
@@ -46,9 +46,9 @@
 
 
         <div class="button">
-          <button type="submit" mat-raised-button>Sign Up</button>
+          <button type="submit" mat-raised-button [routerLink]="['/SignIn']">Sign Up</button>
         </div>
-
+        
       </form>
     </mat-card-content>
 
