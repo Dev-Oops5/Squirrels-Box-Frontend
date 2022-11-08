@@ -1,0 +1,46 @@
+<!-- MODAL PARA EDITAR -->
+  <div class="modal fade" id="modalEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " >
+      <div class="modal-content colorPrimary">
+        <div class="modal-header">
+          <h5 class="modal-title colorText  " id="modalEditLabel"><strong>Box 1</strong></h5>
+
+          <button  class="btn colorPrimary " type="button" data-bs-target="#delete" data-bs-toggle="modal" data-bs-dismiss="modal" > <i class="fa-solid fa-trash"></i></button>
+        </div>
+        <div class="modal-body">
+          <span class=" fs-5"> <strong> Section 1</strong> </span>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Section Name</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Section Name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Section Color</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Blue">
+          </div>
+        </div>
+        <div class="modal-footer ">
+          <button type="button" class="btn colorButton">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  MODAL DE ELIMINAR  -->
+  <div class="modal fade" id="delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " >
+      <div class="modal-content colorPrimary">
+        <div class="modal-header">
+          <h5 class="modal-title colorText  " id="modalEditLabel"><strong>Delete Section 1</strong></h5>
+        </div>
+        <div class="modal-body">
+          <span class=" fs-5">Are you sure Delete  <strong> Section 1</strong> from   <strong>Box  1</strong></span>
+          
+        </div>
+        <div class="modal-footer ">
+          <button type="button" class="btn btn-danger ">Delete</button>
+          <button type="button" class="btn colorButton" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>

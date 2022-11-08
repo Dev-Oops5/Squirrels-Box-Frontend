@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BannerHiComponent } from './banner-hi/banner-hi.component';
 import { AddSectionComponent } from './add-section/add-section.component';
+import { EditSectionComponent } from './edit-section/edit-section.component';
 
 const routes: Routes = [
-  {path: '', component: BannerHiComponent},
   {path: 'add-section', component: AddSectionComponent},
+  {path: 'edit-section', component: EditSectionComponent}
 ];
 
 @NgModule({

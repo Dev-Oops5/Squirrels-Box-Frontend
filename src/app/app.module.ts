@@ -6,6 +6,7 @@ import { BannerHiComponent } from './banner-hi/banner-hi.component';
 import { HeaderComponent } from './header/header.component';
 import { SectionComponent } from './section/section.component';
 import { AddSectionComponent } from './add-section/add-section.component';
+import { EditSectionComponent } from './edit-section/edit-section.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { AddSectionComponent } from './add-section/add-section.component';
     BannerHiComponent,
     HeaderComponent,
     SectionComponent,
-    AddSectionComponent
+    AddSectionComponent,
+    EditSectionComponent
   ],
   imports: [
     BrowserModule,
