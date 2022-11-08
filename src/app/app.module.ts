@@ -23,16 +23,22 @@ import { environment } from 'src/environments/environment';
 
 import { BannerHiComponent } from './banner-hi/banner-hi.component';
 import { HeaderComponent } from './header/header.component';
+import { SectionComponent } from './section/section.component';
+import { AddSectionComponent } from './add-section/add-section.component';
+import { EditSectionComponent } from './edit-section/edit-section.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
     SignInComponent,
-    SignUpComponent
-
+    SignUpComponent,
     BannerHiComponent,
+    ComponentSection,
+    HeaderComponent,
+    SectionComponent,
+    AddSectionComponent,
+    EditSectionComponent,
     HeaderComponent
 
   ],
