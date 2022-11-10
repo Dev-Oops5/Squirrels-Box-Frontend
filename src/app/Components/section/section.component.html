@@ -1,0 +1,108 @@
+
+<div class="container-fluid m-3">
+    <div class="d-grid d-md-flex justify-content-md-end me-3">
+        <button class="btn colorPrimary me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> + Add Section</button>
+    </div>
+<div class="my-5">
+    <span class="fs-3 me-5 " style="color:orange" ><strong>All Sections</strong> </span>
+
+</div>
+
+<div class="card colorPrimary" style="width: 25rem;">
+  <div class="d-grid gap-2 d-md-flex ">
+
+          <div class="card-body" type="button">
+            <div class="d-grid d-md-flex ">
+                <h5 class="">Section 1   </h5>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn colorPrimary " type="button"  data-bs-toggle="modal" data-bs-target="#modalEdit"><i class="fa-solid fa-ellipsis me-5" ></i></button>
+          </div> 
+  </div>
+  <div class="card-footer">
+    <p class="card-text">Create:12/06/22</p>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+
+<!-- Modal Add Section-->
+ <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " >
+      <div class="modal-content colorModal">
+        <div class="modal-header">
+          <h5 class="modal-title colorText " id="staticBackdropLabel"><strong>Add your section</strong></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <span class=" fs-5"> <strong> Box 1</strong> </span>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Section Name</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Section Name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Section Color</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Blue">
+          </div>
+        </div>
+        <div class="modal-footer ">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn colorButton">Add Section</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PARA EDITAR -->
+  <div class="modal fade" id="modalEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " >
+      <div class="modal-content colorModalEdit">
+        <div class="modal-header">
+          <h5 class="modal-title colorText  " id="modalEditLabel"><strong>Box 1</strong></h5>
+
+          <button  class="btn colorModalEdit " type="button" data-bs-target="#delete" data-bs-toggle="modal" data-bs-dismiss="modal" > <i class="fa-solid fa-trash"></i></button>
+        </div>
+        <div class="modal-body">
+          <span class=" fs-5"> <strong> Section 1</strong> </span>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Section Name</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Section Name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Section Color</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Blue">
+          </div>
+        </div>
+        <div class="modal-footer ">
+          <button type="button" class="btn colorButton">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  MODAL DE ELIMINAR  -->
+  <div class="modal fade" id="delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " >
+      <div class="modal-content colorModalEdit">
+        <div class="modal-header">
+          <h5 class="modal-title colorText  " id="modalEditLabel"><strong>Delete Section 1</strong></h5>
+        </div>
+        <div class="modal-body">
+          <span class=" fs-5">Are you sure Delete  <strong> Section 1</strong> from   <strong>Box  1</strong></span>
+          
+        </div>
+        <div class="modal-footer ">
+          <button type="button" class="btn btn-danger ">Delete</button>
+          <button type="button" class="btn colorButton" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
