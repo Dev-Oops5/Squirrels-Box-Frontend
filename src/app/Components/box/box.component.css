@@ -1,0 +1,36 @@
+.colorPrimary{
+    background-color: #ff8a00;
+    color:white;
+}
+.colorSecondary{
+         background-color: #DE8E44;
+
+}
+.divider {
+    max-width: 100%;
+    background-color: #FAB779;
+    border: solid rgba(0, 0, 0, 0);
+    border-width: 5px ;
+    padding-bottom: 5px;
+  }
+  .colorModal{
+    background-color:  #fff7DA;
+    
+}
+.colorText{
+    color: #ff8a00;
+
+}
+.colorButton{
+    background-color:  #ff8a00;
+    color:white;
+}
+
+.colorModalEdit{
+    background-color:  #fff7DA;
+    
+}
+.colorButton{
+    background-color:  #ff8a00;
+    color:white;
+}
