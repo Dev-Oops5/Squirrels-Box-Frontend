@@ -23,6 +23,8 @@ import { environment } from 'src/environments/environment';
 
 import { BannerHiComponent } from './banner-hi/banner-hi.component';
 import { HeaderComponent } from './header/header.component';
+import { BoxComponent } from './box/box.component';
+import { AddBoxComponent } from './add-box/add-box.component';
 
 
 @NgModule({
@@ -30,10 +32,12 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
 
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
 
     BannerHiComponent,
-    HeaderComponent
+    HeaderComponent,
+    BoxComponent,
+    AddBoxComponent,
 
   ],
   imports: [
