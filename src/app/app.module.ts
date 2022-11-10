@@ -25,19 +25,29 @@ import { BannerHiComponent } from './banner-hi/banner-hi.component';
 import { HeaderComponent } from './header/header.component';
 import { BoxComponent } from './box/box.component';
 import { AddBoxComponent } from './add-box/add-box.component';
+import { SectionComponent } from './section/section.component';
+import { AddSectionComponent } from './add-section/add-section.component';
+import { EditSectionComponent } from './edit-section/edit-section.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
     SignInComponent,
     SignUpComponent,
-
     BannerHiComponent,
     HeaderComponent,
     BoxComponent,
     AddBoxComponent,
+    BannerHiComponent,
+    ComponentSection,
+    HeaderComponent,
+    SectionComponent,
+    AddSectionComponent,
+    EditSectionComponent,
+    HeaderComponent
+
 
   ],
   imports: [
