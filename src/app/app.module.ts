@@ -21,10 +21,10 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 import { environment } from 'src/environments/environment';
 
-import { BannerHiComponent } from './banner-hi/banner-hi.component';
 import { HeaderComponent } from './header/header.component';
 import { BoxComponent } from './Components/box/box.component';
 import { SectionComponent } from './Components/section/section.component';
+import { SectionObjectComponent } from './Components/section-object/section-object.component';
 
 
 
@@ -33,13 +33,12 @@ import { SectionComponent } from './Components/section/section.component';
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    BannerHiComponent,
     HeaderComponent,
     BoxComponent,
-    BannerHiComponent,
     HeaderComponent,
     SectionComponent,
-    HeaderComponent
+    HeaderComponent,
+    SectionObjectComponent
 
 
   ],
