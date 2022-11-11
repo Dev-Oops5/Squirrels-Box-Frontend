@@ -1,4 +1,11 @@
+<!-- Banner Box -->
+<div class="container-fluid colorPrimary">
+  <p class="fw-bold text-center fs-3 p-3" href="#">
+    Box 1
+  </p>
+</div>
 
+<!--  Section -->
 <div class="container-fluid m-3">
     <div class="d-grid d-md-flex justify-content-md-end me-3">
         <button class="btn colorPrimary me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> + Add Section</button>
@@ -8,10 +15,10 @@
 
 </div>
 
-<div class="card colorPrimary" style="width: 25rem;">
+<div class="card colorPrimary me-3" style="max-width: 25rem;">
   <div class="d-grid gap-2 d-md-flex ">
 
-          <div class="card-body" type="button">
+          <div class="card-body" type="button" routerLink="/Object">
             <div class="d-grid d-md-flex ">
                 <h5 class="">Section 1   </h5>
             </div>
@@ -44,12 +51,12 @@
         <div class="modal-body">
           <span class=" fs-5"> <strong> Box 1</strong> </span>
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Section Name</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Section Name">
+            <label for="nameSectionInput" class="form-label">Section Name</label>
+            <input type="nameSection" class="form-control" id="nameSectionInput" placeholder="Section Name">
           </div>
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Section Color</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Blue">
+            <label for="colorSectionInput" class="form-label">Section Color</label>
+            <input type="colorSection" class="form-control" id="colorSectionInput" placeholder="Blue">
           </div>
         </div>
         <div class="modal-footer ">
@@ -72,12 +79,12 @@
         <div class="modal-body">
           <span class=" fs-5"> <strong> Section 1</strong> </span>
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Section Name</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Section Name">
+            <label for="nameSectionInput1" class="form-label">Section Name</label>
+            <input type="nameSection" class="form-control" id="nameSectionInput1" placeholder="Section Name">
           </div>
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Section Color</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Blue">
+            <label for="colorSectionInput1" class="form-label">Section Color</label>
+            <input type="colorSection" class="form-control" id="colorSectionInput1" placeholder="Blue">
           </div>
         </div>
         <div class="modal-footer ">

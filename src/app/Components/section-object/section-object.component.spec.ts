@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BannerHiComponent } from './banner-hi.component';
+import { SectionObjectComponent } from './section-object.component';
 
-describe('BannerHiComponent', () => {
-  let component: BannerHiComponent;
-  let fixture: ComponentFixture<BannerHiComponent>;
+describe('SectionObjectComponent', () => {
+  let component: SectionObjectComponent;
+  let fixture: ComponentFixture<SectionObjectComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BannerHiComponent ]
+      declarations: [ SectionObjectComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BannerHiComponent);
+    fixture = TestBed.createComponent(SectionObjectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
