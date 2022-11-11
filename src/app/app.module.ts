@@ -21,8 +21,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 import { environment } from 'src/environments/environment';
 
-import { BannerHiComponent } from './banner-hi/banner-hi.component';
-import { HeaderComponent } from './header/header.component';
+import { BannerHiComponent } from './Components/banner-hi/banner-hi.component';
+import { HeaderComponent } from './Components/header/header.component';
+import { HomeComponent } from './Components/home/home.component';
 
 
 @NgModule({
@@ -30,10 +31,11 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
 
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
 
     BannerHiComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
 
   ],
   imports: [

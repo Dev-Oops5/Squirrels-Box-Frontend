@@ -24,6 +24,7 @@ export class UserService {
     try{
 
       const result = this.afAuth.createUserWithEmailAndPassword(user.email, user.password);
+      console.log(result);
       this.insertUser(user);
 
 

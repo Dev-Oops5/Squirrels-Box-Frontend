@@ -28,7 +28,9 @@ export class SignInComponent{
 
   submit() {
     if (this.form.valid) {
-      this.userService.login(this.form.value.email, this.form.value.password);
+      this.userService.login(this.form.value.email, this.form.value.password).then((res) => {
+        this.router.navigate(['Home']);
+      });
 
     }
   }
