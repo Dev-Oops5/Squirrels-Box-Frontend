@@ -24,19 +24,23 @@ import { environment } from 'src/environments/environment';
 import { BannerHiComponent } from './Components/banner-hi/banner-hi.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { HomeComponent } from './Components/home/home.component';
+import { BoxComponent } from './Components/box/box.component';
+import { SectionObjectComponent } from './Components/section-object/section-object.component';
+import { SectionComponent } from './Components/section/section.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
     SignInComponent,
     SignUpComponent,
-
     BannerHiComponent,
     HeaderComponent,
-    HomeComponent
-
+    HomeComponent,
+    BoxComponent,
+    SectionComponent,
+    HeaderComponent,
+    SectionObjectComponent
   ],
   imports: [
     BrowserModule,
