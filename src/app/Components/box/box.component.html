@@ -1,3 +1,4 @@
+<app-header></app-header>
 <!-- Banner HI -->
 <div class="container-fluid colorPrimary">
   <p class="fw-bold text-center fs-3 p-3" href="#">
@@ -14,26 +15,26 @@
         <span class="fs-3 me-5 " style="color:orange" ><strong>All Boxes</strong> </span>
 
     </div>
-    
-    <div class="card colorSecondary me-3">
+
+    <div class="card colorSecondary me-3" *ngFor="let box of boxList">
         <div class="d-grid gap-2 d-md-flex ">
-          
+
           <div class="card-body " type="button" routerLink="/Section">
-            <div class="d-grid d-md-flex "> 
-                <h5 class=""  >Box 1</h5>
-            </div>  
+            <div class="d-grid d-md-flex ">
+                <h5 class=""  >{{ box.name }}</h5>
+            </div>
           </div>
 
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn colorSecondary  " type="button"  data-bs-toggle="modal" data-bs-target="#modal-edit-box"><i class="fa-solid fa-ellipsis " ></i></button>
+            <button class="btn colorSecondary  " type="button"  data-bs-toggle="modal" data-bs-target="#modal-edit-box" (click)="datos(box)"><i class="fa-solid fa-ellipsis " ></i></button>
           </div>
 
         </div>
         <div class="divider"></div>
         <div class="card-footer">
-              <p class="card-text">Author</p>
+              <p class="card-text"> by Pipo</p>
 
-        </div> 
+        </div>
     </div>
 
 
@@ -43,16 +44,16 @@
 <!-- Modal Add Caja-->
 <div class="modal fade " id="modal-add-box" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered " >
-      <div class="modal-content colorModal">
+      <div class="modal-content colorModal" >
         <div class="modal-header">
           <h5 class="modal-title colorText " id="staticBackdropLabel"><strong>Add your Box</strong></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          
+        <form class="modal-body" [formGroup]="boxForm" (ngSubmit)="subitBoxData()">
+
           <div class="mb-3" >
-            <label for="boxnameInput" class="form-label">Box Name</label>
-            <input type="boxname" class="form-control" id="boxnameInput" placeholder="Box 1">
+            <label for="boxnameInput" class="form-label" >Box Name</label>
+            <input type="boxname" class="form-control" id="boxnameInput" placeholder="Box 1" formControlName="name">
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -64,14 +65,15 @@
           </div>
           <div class="mb-3">
             <label for="emailboxInput" class="form-label">Share your Box</label>
-            <input type="emailbox" class="form-control" id="emailboxInput" placeholder="Email/Username">
+            <input type="emailbox" class="form-control" id="emailboxInput" placeholder="Email/Username" formControlName="privateLink">
           </div>
-      
-        </div>
-        <div class="modal-footer ">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn colorButton">Add Section</button>
-        </div>
+
+          <div class="modal-footer ">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn colorButton">Add Box</button>
+          </div>
+        </form>
+
       </div>
     </div>
   </div>
@@ -81,7 +83,7 @@
     <div class="modal-dialog modal-dialog-centered " >
       <div class="modal-content colorModalEdit">
         <div class="modal-header">
-          <h5 class="modal-title colorText  " id="modalEditLabel"><strong>Box 1</strong></h5>
+          <h5 class="modal-title colorText  " id="modalEditLabel"><strong>box 1</strong></h5>
 
           <button  class="btn colorModalEdit " type="button" data-bs-target="#deleteBox" data-bs-toggle="modal" data-bs-dismiss="modal" > <i class="fa-solid fa-trash"></i></button>
         </div>
@@ -89,7 +91,7 @@
             <div class="mb-3" >
 
               <label for="boxnameInput1" class="form-label">Box Name</label>
-              <input type="boxname" class="form-control" id="boxnameInput1" placeholder="Box 1">
+              <input type="boxname" class="form-control" id="boxnameInput1" placeholder=" {{exampleBox.name}} ">
 
             </div>
 
@@ -130,7 +132,7 @@
           </div>
         </div>
         <div class="modal-footer ">
-          <button type="button" class="btn btn-danger ">Delete</button>
+          <button type="button" class="btn btn-danger " >Delete</button>
           <button type="button" class="btn colorButton" data-bs-dismiss="modal">Cancel</button>
         </div>
       </div>
