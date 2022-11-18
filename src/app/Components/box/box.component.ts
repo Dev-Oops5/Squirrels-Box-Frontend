@@ -15,7 +15,15 @@ export class BoxComponent implements OnInit {
 
   boxList: Box[]=[];
 
-  exampleBox: Box;
+  exampleBox: Box ={
+    name: '',
+    boxType: true,
+    dateCreated: '',
+    download: true,
+    favorite: true,
+    privateLink: '',
+    sections: [],
+  };
 
   constructor(private data: DataService, private fb: FormBuilder) { }
 
