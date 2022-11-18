@@ -7,7 +7,8 @@ import { UserService } from 'src/app/Services/user.service';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  styleUrls: ['./sign-in.component.css'],
+  providers: [  ],
 })
 
 export class SignInComponent{
@@ -15,7 +16,7 @@ export class SignInComponent{
   @Input() error!: string|null;
   @Output() submitEM = new EventEmitter();
 
-  constructor(public router:Router, private userService: UserService){
+  constructor( private router: Router, private userService: UserService){
 
   }
 
@@ -28,8 +29,15 @@ export class SignInComponent{
 
   submit() {
     if (this.form.valid) {
-      this.userService.login(this.form.value.email, this.form.value.password);
-
+      this.userService.login(this.form.value)
+      .then((res) => {
+        alert('Inicio de sesión exitoso')
+        this.router.navigate(['/Box']);
+      })
+      .catch((err) => {
+        console.log(err.message);
+        this.router.navigate(['/SignIn']);
+      });
     }
   }
 }

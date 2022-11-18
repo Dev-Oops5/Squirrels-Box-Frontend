@@ -1,10 +1,11 @@
+<app-header></app-header>
 <!-- Banner Box -->
 <div class="container-fluid colorPrimary">
     <p class="fw-bold text-center fs-3 p-3" href="#">
       Box 1 Section 1
     </p>
   </div>
-  
+
   <!--  Section Items-->
   <div class="container-fluid m-3">
       <div class="d-grid d-md-flex justify-content-md-end me-3">
@@ -33,15 +34,15 @@
                         <td> <button class="btn colorPrimary shadow" type="button" data-bs-toggle="modal" data-bs-target="#modalView" style="width: 10rem;"> Ver</button></td>
                         <td> <button class="btn colorPrimary shadow" type="button" data-bs-toggle="modal" data-bs-target="#modalEditItem" style="width: 10rem;"> Editar</button></td>
                         <td> <button class="btn colorPrimary shadow" type="button" data-bs-toggle="modal" data-bs-target="#modalDeleteItem" style="width: 10rem;"> Eliminar</button></td>
-                    
+
                     </tr>
-                    
+
                     </tbody>
                 </table>
             </div>
-  
+
 </div>
-  
+
 <!-- Modal Add Item -->
 
 <div class="modal fade " id="modalAddItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -102,7 +103,7 @@
                 <input type="nameItem" class="form-control" id="nameItemInput" placeholder="Item 1">
               </div>
           <span class=" fs-5 colorText"> <strong> Section 1</strong> </span>
-          
+
           <div class="mb-3">
             <label for="colorItemInput" class="form-label">Item Color</label>
             <input type="colorItem" class="form-control" id="colorItemInput" placeholder="Blue">
@@ -131,7 +132,7 @@
         </div>
         <div class="modal-body">
           <span class=" fs-5">Are you sure delete item  <strong> Item 1</strong> from section <strong>Section 1</strong> from box <strong>Box 1</strong> </span>
-          
+
         </div>
         <div class="modal-footer ">
           <button type="button" class="btn btn-danger ">Delete</button>

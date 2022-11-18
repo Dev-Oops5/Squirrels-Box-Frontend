@@ -5,10 +5,13 @@ import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { BoxComponent } from './Components/box/box.component';
 import { SectionComponent } from './Components/section/section.component';
 import { SectionObjectComponent } from './Components/section-object/section-object.component';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+
 
 const routes: Routes = [
   { path: 'SignIn' , component:SignInComponent},
   { path: 'SignUp', component:SignUpComponent},
+  { path: '', redirectTo:'/SignIn', pathMatch:'full'},
   { path: 'Box', component:BoxComponent},
   { path: 'Section', component:SectionComponent},
   { path: 'Object', component:SectionObjectComponent},
