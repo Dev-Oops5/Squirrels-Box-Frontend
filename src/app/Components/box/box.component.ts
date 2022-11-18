@@ -13,9 +13,12 @@ export class BoxComponent implements OnInit {
 
   public boxForm: FormGroup;
 
+  public editForm: FormGroup;
+
   boxList: Box[]=[];
 
   exampleBox: Box ={
+    id:'',
     name: '',
     boxType: true,
     dateCreated: '',
@@ -39,7 +42,7 @@ export class BoxComponent implements OnInit {
       })
     })
     this.boForm();
-
+    this.ediForm();
   }
 
   dataState(){
@@ -54,6 +57,15 @@ export class BoxComponent implements OnInit {
       name: [''],
       boxType: true,
       privateLink: [''],
+    })
+  }
+
+  ediForm(){
+    this.editForm = this.fb.group({
+      id: [''],
+      name1: [''],
+      boxType1: true,
+      privateLink1: [''],
     })
   }
 
@@ -78,13 +90,20 @@ export class BoxComponent implements OnInit {
     this.ResetForm();
   }
 
-  deleteBox(box){
-    this.data.DeleteBox(box.$key);
+  updateBox(){
+    this.editForm.value.id = this.exampleBox.id;
+    this.exampleBox.name = this.editForm.value.name1;
+    this.exampleBox.boxType = this.editForm.value.boxType1;
+    this.exampleBox.privateLink = this.editForm.value.privateLink1;
+    this.data.UpdateBox(this.exampleBox);
 
   }
 
-  datos(box){
+  deleteBox(){
+    this.data.DeleteBox(this.exampleBox.id);
+  }
 
+  datos(box){
     this.exampleBox = box;
 
   }

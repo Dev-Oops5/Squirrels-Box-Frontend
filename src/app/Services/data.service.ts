@@ -52,11 +52,17 @@ export class DataService {
    }
 
    UpdateBox(box:Box){
-    this.boxRef.update({
+
+
+
+    let boxRef = this.GetBox(box.id);
+
+    boxRef.update({
       name: box.name,
       boxType: box.boxType,
       privateLink: box.privateLink,
     })
+
    }
 
    DeleteBox(id:string){
