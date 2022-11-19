@@ -26,7 +26,7 @@ import { BoxComponent } from './Components/box/box.component';
 import { SectionObjectComponent } from './Components/section-object/section-object.component';
 import { SectionComponent } from './Components/section/section.component';
 
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @NgModule({
@@ -54,6 +54,7 @@ import { SectionComponent } from './Components/section/section.component';
     AngularFireDatabaseModule
   ],
   providers: [ ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
