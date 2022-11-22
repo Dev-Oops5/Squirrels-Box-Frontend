@@ -20,7 +20,7 @@ export class DataService {
   boxTemp: Box;
   sectionTemp: Section;
   id1:string = '';
-
+  author:string;
   constructor(private afs: AngularFireDatabase, private userService: UserService) {
 
    }
@@ -34,10 +34,10 @@ export class DataService {
    }
 
    AddBox(box: Box){
-    let autho: string;
+
     this.userService.getCurrentUser().then((res) => {
-      autho = res.email;
-      box.author = autho;
+      this.author = res.email;
+      box.author = this.author;
       this.AddRealBox(box);
     });
     //boxRef.key = box.name;
@@ -49,6 +49,7 @@ export class DataService {
     let currentDate = date.toLocaleString();
     let formatDate = currentDate.replace(/[,]/, '');
     this.id1 = this.afs.createPushId()
+
     this.afs.object('boxes/'+box.name).set({
       id: this.id1,
       name: box.name,

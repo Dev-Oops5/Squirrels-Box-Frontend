@@ -13,7 +13,6 @@ export class UserService {
 
   userList: AngularFireList<any>;
   userItem: AngularFireObject<any>;
-
   constructor(public router:Router,public afAuth: AngularFireAuth, private firebase:AngularFireDatabase) { }
 
 
@@ -51,6 +50,7 @@ export class UserService {
     }
   }
 
+
   login({email, password}:any ) {
 
       const result = this.afAuth.signInWithEmailAndPassword(email, password);
@@ -67,7 +67,9 @@ export class UserService {
     let cu: User = new User();
     this.afAuth.onAuthStateChanged(user=>{
       if(user){
+        console.log(user);
         cu = user;
+        console.log(cu);
       }else{
         return null;
       }
@@ -79,4 +81,5 @@ export class UserService {
     let cua = this.afAuth.currentUser;
     return cua;
   }
+  
 }

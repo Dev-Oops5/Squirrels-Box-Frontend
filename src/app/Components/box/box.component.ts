@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Box } from 'src/app/models/box';
 import { DataService } from 'src/app/Services/data.service';
 import { UserService } from 'src/app/Services/user.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-box',
@@ -17,7 +18,7 @@ export class BoxComponent implements OnInit {
   public editForm: FormGroup;
 
   boxList: Box[]=[];
-
+  boxList1: Box[]=[];
   exampleBox: Box ={
     id: '',
     download:true,
@@ -29,28 +30,38 @@ export class BoxComponent implements OnInit {
     description:''
   };
 
-  constructor(private data: DataService, private fb: FormBuilder, private userService: UserService) { }
+  constructor(private data: DataService, private fb: FormBuilder, private userService: UserService) {
+
+  }
 
   ngOnInit(): void {
     this.dataState();
+    this.userService.comprobarAutentificación();
     let s = this.data.getAllBoxes();
-    s.snapshotChanges().subscribe(data => {
-      this.boxList = [];
-      data.forEach(item => {
-        let a = item.payload.toJSON();
+    this.userService.getCurrentUser().then((user) => {
+      console.log(user);
+      s.snapshotChanges().subscribe(data => {
+        this.boxList = [];
+        data.forEach(item => {
+          let a = item.payload.toJSON();
+          a['$key'] = item.key;
+          if(a['author'] === user.email){
+            console.log(a);
+            this.boxList.push(a as Box);
+          }
+        })
+      });
+    });
 
-        a['$key'] = item.key;
-        this.boxList.push(a as Box);
-      })
-    })
     this.boForm();
     this.ediForm();
-    this.userService.comprobarAutentificación();
+
   }
+
 
   dataState(){
     this.data.getAllBoxes().valueChanges().subscribe(data => {
-      this.boxList = data;
+      this.boxList1 = data;
     })
   }
 

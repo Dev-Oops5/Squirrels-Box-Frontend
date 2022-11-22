@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit{
   user:User = new User();
 
   ngOnInit(): void {
-
+    this.userService.comprobarAutentificación();
   }
 
   constructor(public router:Router, private userService: UserService){
