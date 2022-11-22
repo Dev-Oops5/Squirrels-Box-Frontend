@@ -33,7 +33,7 @@
 
         <p>
           <mat-form-field>
-            <input type="password" matInput placeholder="Confirm Password" id="password" formControlName="password2">
+            <input type="password" matInput placeholder="Confirm Password" id="confirmPassword" formControlName="password2">
           </mat-form-field>
         </p>
 
@@ -46,7 +46,7 @@
 
 
         <div class="button">
-          <button type="button" mat-raised-button [routerLink]="['/SignIn']">Sign Up</button>
+          <button type="button" mat-raised-button [routerLink]="['/SignIn']" (click)="submit()">Sign Up</button>
         </div>
 
       </form>

@@ -38,7 +38,6 @@ export class SignUpComponent implements OnInit{
 
 
   submit() {
-
     if (this.form1.valid) {
       this.user=this.form1.value;
       this.userService.register(this.user);

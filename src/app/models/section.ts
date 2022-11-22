@@ -7,5 +7,5 @@ export class Section {
   dateCreated?:string;
   favorite?:boolean;
   name?:string;
-  items?:Items[];
+  items?: Items[];
 }

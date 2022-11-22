@@ -5,8 +5,8 @@ export class Items {
   color?: string;
   dateCreated?: string;
   description?: string;
-  favorite?: boolean;
+  favourite?: boolean;
   name?: string;
   picture?: string;
-
+  amount?:string;
 }
