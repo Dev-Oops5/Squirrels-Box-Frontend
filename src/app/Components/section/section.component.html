@@ -19,8 +19,8 @@
 
 <!--  Card Section -->
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-          <div class="card colorPrimary me-3" style="max-width: 25rem;" *ngFor="let section of sectionList">
+  <div class="col" *ngFor="let section of sectionList">
+          <div class="card colorPrimary me-3" style="max-width: 25rem;" >
             <div class="d-grid gap-2 d-md-flex ">
 
                           <div class="card-body" type="button" routerLink="/Object" (click)="saveTempSection(section)">
