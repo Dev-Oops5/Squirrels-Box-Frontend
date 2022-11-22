@@ -30,14 +30,14 @@
                         <th scope="col"></th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngFor="let item of itemList">
                     <tr>
-                        <td>Item 1</td>
-                        <td>Header</td>
-                        <td>Header</td>
-                        <td> <button class="btn colorPrimary shadow" type="button" data-bs-toggle="modal" data-bs-target="#modalView" style="width: 10rem;"> Ver</button></td>
-                        <td> <button class="btn colorPrimary shadow" type="button" data-bs-toggle="modal" data-bs-target="#modalEditItem" style="width: 10rem;"> Editar</button></td>
-                        <td> <button class="btn colorPrimary shadow" type="button" data-bs-toggle="modal" data-bs-target="#modalDeleteItem" style="width: 10rem;"> Eliminar</button></td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.amount}}</td>
+                        <td> <button class="btn colorPrimary shadow" type="button" data-bs-toggle="modal" data-bs-target="#modalView" style="width: 10rem;" (click)="datos(item)"> Ver</button></td>
+                        <td> <button class="btn colorPrimary shadow" type="button" data-bs-toggle="modal" data-bs-target="#modalEditItem" style="width: 10rem;" (click)="datos(item)"> Editar</button></td>
+                        <td> <button class="btn colorPrimary shadow" type="button" data-bs-toggle="modal" data-bs-target="#modalDeleteItem" style="width: 10rem;" (click)="datos(item)"> Eliminar</button></td>
 
                     </tr>
 
@@ -51,7 +51,7 @@
 
 <div class="modal fade " id="modalAddItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered " >
-      <div class="modal-content colorModal">
+      <form class="modal-content colorModal" [formGroup]="itemForm">
         <div class="modal-header">
           <h5 class="modal-title colorText " id="staticBackdropLabel"><strong>Add your Item</strong></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -60,23 +60,23 @@
           <span class=" fs-5"> <strong> Box 1,Section 1</strong> </span>
           <div class="mb-3">
             <label for="itemInput" class="form-label">Item</label>
-            <input type="nameItem" class="form-control" id="itemInput" placeholder="Item 1">
+            <input type="nameItem" class="form-control" id="itemInput" placeholder="Item 1" formControlName="name">
           </div>
           <div class="mb-3">
             <label for="exampleColorInput" class="form-label">Section Color</label>
-            <input type="colorItem" class="form-control"  id="exampleColorInput" placeholder="Blue">
+            <input type="colorItem" class="form-control"  id="exampleColorInput" placeholder="Blue" formControlName="color">
           </div>
           <div class="mb-3">
             <label for="DescripcioInput" class="form-label">Descripcion</label>
-            <input type="descripcion" class="form-control" id="DescripcioInput" placeholder="Enter your Descripcion here">
+            <input type="descripcion" class="form-control" id="DescripcioInput" placeholder="Enter your Descripcion here" formControlName="description">
           </div>
           <div class="mb-3">
             <label for="AmountInput" class="form-label">Amount</label>
-            <input type="amount" class="form-control" id="AmountInput" placeholder="Ex. 1">
+            <input type="amount" class="form-control" id="AmountInput" placeholder="Ex. 1" formControlName="amount">
           </div>
           <div class="mb-3">
             <label for="PictureInput" class="form-label">Picture</label>
-            <input type="file" class="form-control" id="PictureInput">
+            <input type="file" class="form-control" id="PictureInput" formControlName="picture">
           </div>
           <div class="input-group  mb-3">
             <span class="input-group-text" id="basic-addon1">+</span>
@@ -85,9 +85,9 @@
         </div>
         <div class="modal-footer ">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn colorButton">Add Section</button>
+          <button type="button" class="btn colorButton" data-bs-dismiss="modal" (click)="addItem()">Add Item</button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 
@@ -95,34 +95,34 @@
 
 <div class="modal fade" id="modalEditItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered " >
-      <div class="modal-content colorModalEdit">
+      <form class="modal-content colorModalEdit" [formGroup]="editForm">
         <div class="modal-header">
-          <h5 class="modal-title colorText  " id="modalEditLabel"><strong>Item 1</strong></h5>
+          <h5 class="modal-title colorText  " id="modalEditLabel"><strong>{{exampleItem.name}}</strong></h5>
 
           <button  class="btn colorModalEdit " type="button" data-bs-target="#delete" data-bs-toggle="modal" data-bs-dismiss="modal" > <i class="fa-solid fa-trash"></i></button>
         </div>
         <div class="modal-body">
             <div class="mb-3">
                 <label for="nameItemInput" class="form-label">Item name</label>
-                <input type="nameItem" class="form-control" id="nameItemInput" placeholder="Item 1">
+                <input type="nameItem" class="form-control" id="nameItemInput" placeholder="{{exampleItem.name}}" formControlName="name">
               </div>
-          <span class=" fs-5 colorText"> <strong> Section 1</strong> </span>
+          <span class=" fs-5 colorText"> <strong> Starred specs</strong> </span>
 
           <div class="mb-3">
             <label for="colorItemInput" class="form-label">Item Color</label>
-            <input type="colorItem" class="form-control" id="colorItemInput" placeholder="Blue">
+            <input type="colorItem" class="form-control" id="colorItemInput" placeholder="{{exampleItem.color}}" formControlName="color">
           </div>
 
           <div class="mb-3">
             <label for="amountItemInput" class="form-label">Amount </label>
-            <input type="amountItem" class="form-control" id="amountItemInput" placeholder="22">
+            <input type="amountItem" class="form-control" id="amountItemInput" placeholder="{{exampleItem.amount}}" formControlName="amount">
           </div>
         </div>
         <div class="modal-footer ">
-          <button type="button" class="btn colorButton">Save</button>
+          <button type="button" class="btn colorButton" data-bs-dismiss="modal" (click)="updateItem()">Save</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 
@@ -132,14 +132,14 @@
     <div class="modal-dialog modal-dialog-centered " >
       <div class="modal-content colorModalEdit">
         <div class="modal-header">
-          <h5 class="modal-title colorText  " id="modalEditLabel"><strong>Delete Section 1</strong></h5>
+          <h5 class="modal-title colorText  " id="modalEditLabel"><strong>Delete {{exampleItem.name}}</strong></h5>
         </div>
         <div class="modal-body">
-          <span class=" fs-5">Are you sure delete item  <strong> Item 1</strong> from section <strong>Section 1</strong> from box <strong>Box 1</strong> </span>
+          <span class=" fs-5">Are you sure delete item  <strong> {{exampleItem.name}}</strong> from section <strong>{{exampleItem.sectionId}}</strong> from box <strong>{{exampleItem.boxId}}</strong> </span>
 
         </div>
         <div class="modal-footer ">
-          <button type="button" class="btn btn-danger ">Delete</button>
+          <button type="button" class="btn btn-danger " (click)="deleteItem()" data-bs-dismiss="modal">Delete</button>
           <button type="button" class="btn colorButton" data-bs-dismiss="modal">Cancel</button>
         </div>
       </div>

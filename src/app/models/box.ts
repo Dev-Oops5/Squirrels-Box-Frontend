@@ -1,5 +1,6 @@
 import { Section } from "./section";
 
+
 export class Box {
   id?: string;
   dateCreated?: string;
@@ -7,6 +8,8 @@ export class Box {
   favorite?:boolean;
   name?:string;
   privateLink?:string;
-  sections?:Section[];
   boxType?:boolean;
+  author?:string;
+  description?:string;
+  sections?:Section[];
 }

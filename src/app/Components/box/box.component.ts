@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Box } from 'src/app/models/box';
 import { DataService } from 'src/app/Services/data.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-box',
@@ -18,17 +19,17 @@ export class BoxComponent implements OnInit {
   boxList: Box[]=[];
 
   exampleBox: Box ={
-    id:'',
-    name: '',
-    boxType: true,
-    dateCreated: '',
-    download: true,
-    favorite: true,
-    privateLink: '',
-    sections: [],
+    id: '',
+    download:true,
+    favorite:true,
+    name:'',
+    privateLink:'',
+    boxType:true,
+    author:'',
+    description:''
   };
 
-  constructor(private data: DataService, private fb: FormBuilder) { }
+  constructor(private data: DataService, private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit(): void {
     this.dataState();
@@ -37,12 +38,14 @@ export class BoxComponent implements OnInit {
       this.boxList = [];
       data.forEach(item => {
         let a = item.payload.toJSON();
+
         a['$key'] = item.key;
         this.boxList.push(a as Box);
       })
     })
     this.boForm();
     this.ediForm();
+    this.userService.comprobarAutentificación();
   }
 
   dataState(){
@@ -69,8 +72,17 @@ export class BoxComponent implements OnInit {
     })
   }
 
-  ResetForm(){
+  saveTempBox(box){
+
+    this.data.saveBox(box);
+  }
+
+  ResetBoxForm(){
     this.boxForm.reset();
+  }
+
+  ResetEditForm(){
+    this.editForm.reset();
   }
 
   get Name(){
@@ -87,20 +99,19 @@ export class BoxComponent implements OnInit {
 
   subitBoxData(){
     this.data.AddBox(this.boxForm.value);
-    this.ResetForm();
+    this.ResetBoxForm();
   }
 
   updateBox(){
-    this.editForm.value.id = this.exampleBox.id;
-    this.exampleBox.name = this.editForm.value.name1;
+
     this.exampleBox.boxType = this.editForm.value.boxType1;
     this.exampleBox.privateLink = this.editForm.value.privateLink1;
-    this.data.UpdateBox(this.exampleBox);
-
+    this.data.UpdateBox(this.exampleBox,this.editForm.value.name1);
+    this.ResetEditForm();
   }
 
   deleteBox(){
-    this.data.DeleteBox(this.exampleBox.id);
+    this.data.DeleteBox(this.exampleBox.name);
   }
 
   datos(box){

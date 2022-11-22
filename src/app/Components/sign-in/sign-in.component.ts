@@ -29,8 +29,7 @@ export class SignInComponent{
 
   submit() {
     if (this.form.valid) {
-      this.userService.login(this.form.value)
-      .then((res) => {
+      this.userService.login(this.form.value).then((res) => {
         alert('Inicio de sesión exitoso')
         this.router.navigate(['/Box']);
       })
@@ -39,5 +38,7 @@ export class SignInComponent{
         this.router.navigate(['/SignIn']);
       });
     }
+
+
   }
 }
